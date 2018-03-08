@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <head>
-<script src="web3.min.js"></script>
+  <meta charset="utf-8" />
+	<script src="web3.min.js"></script>
 </head>
 <body> 
 <script>
@@ -213,10 +214,17 @@ if(!web3.isConnected())
 
 </script>
 
-<p>Transfer the token</p><input id="a" type="text"><input id="a1" type="text"><button onclick="tr()">Transfer</button>
-<p>TransferFrom the Token</p><input id="b" type="text"><button onclick="trf()">Transfer</button>
-<p>Check Balance</p><input id="c" type="text"><button onclick="bal()">Transfer</button>
-<p>Enter for Mint</p><input id="y1" type="text"><button onclick="mint()">MINT</button>
+<p>Transfer the token</p>
+<input id="a" type="text" placholder="Address">
+<input id="a1" type="text" placeholder="Amount">
+<button onclick="tr()">Transfer</button>
+<p>TransferFrom the Token</p>
+  <input id="z" type="text" placeholder="From Address">
+  <input id="z1" type="text" placeholder="To Address">
+  <input id="z2" type="text" placeholder="Amount">
+  <button onclick="trf()">Transfer</button>
+  <p>Check Balance</p><input id="c" type="text"><button onclick="bal()">Transfer</button>
+   <p>Enter for Mint</p><input id="y1" type="text"><button onclick="mint()">MINT</button>
 <script>
 	function tr()
 {
@@ -239,7 +247,7 @@ if(!web3.isConnected())
 }
 	function bal()
 {
-	var d4=document.getElementById("y").value;
+	var d4=document.getElementById("c").value;
 	yes.balanceOf(d4,function(err,result)
 {
 	alert(result);
@@ -255,3 +263,5 @@ if(!web3.isConnected())
 	
 
 </script>
+</body>
+</html>
