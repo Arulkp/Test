@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8" />
+       <meta charset="utf-8" />
 	<script src="web3.min.js"></script>
 </head>
 <body> 
-<script>
-web3.eth.defaultAccount = web3.eth.accounts[0];
-  var me = web3.eth.contract([
+	<script>
+         web3.eth.defaultAccount = web3.eth.accounts[0];
+ var me = web3.eth.contract([
 	{
 		"constant": true,
 		"inputs": [],
@@ -182,7 +183,7 @@ web3.eth.defaultAccount = web3.eth.accounts[0];
 	}
 ])
 
-var yes=me.at('0xb6174cceeb394ceb4ef1466957398b2336b97c19');
+var yes=me.at('0x8907a7694f21eff33aeb086b4644b79b8e864af6');
 if(!web3.isConnected()) 
         {
         console.log("OOPS....web3 not connected");
@@ -213,18 +214,71 @@ if(!web3.isConnected())
     })
 
 </script>
-
-<p>Transfer the token</p>
-<input id="a" type="text" placholder="Address">
-<input id="a1" type="text" placeholder="Amount">
-<button onclick="tr()">Transfer</button>
-<p>TransferFrom the Token</p>
-  <input id="z" type="text" placeholder="From Address">
-  <input id="z1" type="text" placeholder="To Address">
-  <input id="z2" type="text" placeholder="Amount">
-  <button onclick="trf()">Transfer</button>
-  <p>Check Balance</p><input id="c" type="text"><button onclick="bal()">Transfer</button>
-   <p>Enter for Mint</p><input id="y1" type="text"><button onclick="mint()">MINT</button>
+<style>
+	table,th,td
+		{ border:2px solid black;
+		  border-collapse:collapse;
+		 
+		}
+		p
+		{
+		font-family: sans-serif;
+		font-size:15pt;
+		}
+		th
+		{
+		background-color:#566573;
+		color:white;
+		padding:-2px;
+		}
+		table
+		{
+		width:30%;
+		}
+		input
+		{
+		width:80%;
+		}
+		td
+		{	
+		padding:-5px;
+		}
+		button
+		{
+		background-color:#566573;
+		color:white;
+		}
+		
+</style>
+<center>
+<table>
+<tr><th colspan="2" align="center"><p>Transfer the token</p></th></tr>
+<tr><td align="center"><p>Enter the Address</p></td><td align="center"><input id="a"type="text" placeholder=" To Address"></td></tr>
+<tr><td align="center"><p>Enter Amount</p></td><td align="center"><input id="a1" type="text" placeholder="Amount"></td></tr>
+<tr><td colspan="2" align="center"><button onclick="tr()">Transfer</button></td</tr>
+</table>
+</br>
+</br>
+<table>
+<tr><th colspan="2" align="center"><p>TransferFrom the Token</p></th></tr>
+  <tr><td align="center"><p>Enter From Address</p></td><td align="center"><input id="z" type="text" placeholder="From Address" ></td></tr>
+  <tr><td align="center"><p>Enter to Address</p></td><td align="center"><input id="z1" type="text" placeholder="To Address"  ></td></tr>
+  <tr><td align="center"><p>Enter Amount</p></td><td align="center"><input id="z2" type="text" placeholder="Amount"></td></tr>
+  <tr><td colspan="2" align="center"><button onclick="trf()">TransferFrom</button></td></tr>
+</table>
+</br>
+</br>
+<table>
+  <tr><th colspan="2" align="center"><p>Check Balance</p></th></tr><tr><td align="center"><p>Enter Address</p></td><td align="center"><input id="c" type="text" placeholder="Address"></tr></td> <tr><td colspan="2" align="center"><button onclick="bal()">Check Balance</button></td></tr>
+</table>
+</br>
+</br>
+<table>
+   <tr><th colspan="2" align="center"><p>Enter for Mint</p></th></tr><tr><td align="center"><p>Enter Amount</p></td><td align="center"><input id="y1" type="text" placeholder="amount"></td></tr><tr><td colspan="2" align="center"  align="center"><button onclick="mint()">MINT</button></td></tr>
+</table>
+</br>
+</br>
+</center>
 <script>
 	function tr()
 {
@@ -232,7 +286,7 @@ if(!web3.isConnected())
 	var e=document.getElementById("a1").value;
 	yes.transfer(d,e,function(err,result)
 {
-	alert(result);
+	alert(done);
 });
 }
 	function trf()
